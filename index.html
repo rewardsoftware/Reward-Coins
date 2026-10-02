@@ -20,7 +20,6 @@
     } catch(e){ AdsgramInterstitial = null; }
   });
 </script>
-<script src='//libtl.com/sdk.js' data-zone='11196243' data-sdk='show_11196243'></script>
 <script src='//libtl.com/sdk.js' data-zone='11196253' data-sdk='show_11196253'></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1170,8 +1169,8 @@ function triggerMonetagInterstitial() {
         inAppSettings: {
           frequency: 2,
           capping: 0.1,
-          interval: 90,
-          timeout: 5,
+          interval: 60,
+          timeout: 7,
           everyPage: false
         }
       });
@@ -1970,8 +1969,8 @@ function watchMonetagIntAd(){
   const btn=document.querySelector('#monetagIntActionArea button');
   if(btn){ btn.disabled=true; btn.innerHTML='Loading Ad...'; }
   try {
-    if(typeof window['show_11196243']==='function'){
-      window['show_11196243']();
+    if(typeof window['show_11196253']==='function'){
+      window['show_11196253']();
       setTimeout(()=>{ giveAdCoin('monetagInt', MONETAG_INT_REWARD, 'Quick Ad Watched'); },3000);
     } else { showToast('Ad not available right now','error'); renderAllAdAreas(); }
   } catch(e){ showToast('Ad not available right now','error'); renderAllAdAreas(); }
